@@ -84,10 +84,8 @@ module Google
       # Data is coming from the GCP API
       class DatasetDatasetReferenApi < DatasetDatasetReferen
         def initialize(args)
-          @dataset_id =
-            Google::Bigquery::Property::String.api_munge(args['datasetId'])
-          @project_id =
-            Google::Bigquery::Property::String.api_munge(args['projectId'])
+          @dataset_id = Google::Bigquery::Property::String.api_munge(args['datasetId'])
+          @project_id = Google::Bigquery::Property::String.api_munge(args['projectId'])
         end
       end
 
@@ -95,10 +93,8 @@ module Google
       # Data is coming from the Puppet manifest
       class DatasetDatasetReferenCatalog < DatasetDatasetReferen
         def initialize(args)
-          @dataset_id =
-            Google::Bigquery::Property::String.unsafe_munge(args['dataset_id'])
-          @project_id =
-            Google::Bigquery::Property::String.unsafe_munge(args['project_id'])
+          @dataset_id = Google::Bigquery::Property::String.unsafe_munge(args['dataset_id'])
+          @project_id = Google::Bigquery::Property::String.unsafe_munge(args['project_id'])
         end
       end
     end

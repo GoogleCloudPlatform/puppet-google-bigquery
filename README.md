@@ -59,12 +59,12 @@ required gems.
 
 ```puppet
 gbigquery_dataset { 'example_dataset':
-  ensure     => present,
+  ensure            => present,
   dataset_reference => {
     dataset_id => 'example_dataset'
   },
-  project    => $project, # e.g. 'my-test-project'
-  credential => 'mycred',
+  project           => $project, # e.g. 'my-test-project'
+  credential        => 'mycred',
 }
 
 ```
@@ -103,12 +103,12 @@ Datasets allow you to organize and control access to your tables.
 
 ```puppet
 gbigquery_dataset { 'example_dataset':
-  ensure     => present,
+  ensure            => present,
   dataset_reference => {
     dataset_id => 'example_dataset'
   },
-  project    => $project, # e.g. 'my-test-project'
-  credential => 'mycred',
+  project           => $project, # e.g. 'my-test-project'
+  credential        => 'mycred',
 }
 
 ```
@@ -144,25 +144,29 @@ gbigquery_dataset { 'id-of-resource':
   labels                      => namevalues,
   last_modified_time          => integer,
   location                    => string,
+  name                        => string,
   project                     => string,
   credential                  => reference to gauth_credential,
 }
 ```
+
+##### `name`
+
+  Dataset name
 
 ##### `access`
 
   Access controls on the bucket.
 
 ##### access[]/domain
-  A domain to grant access to. Any users signed in with the domain specified
-  will be granted the specified access
+  A domain to grant access to. Any users signed in with the domain specified will be granted the
+  specified access
 
 ##### access[]/group_by_email
   An email address of a Google Group to grant access to
 
 ##### access[]/role
-  Describes the rights granted to the user specified by the other member of the
-  access object
+  Describes the rights granted to the user specified by the other member of the access object
 
 ##### access[]/special_group
   A special group to grant access to.
@@ -171,10 +175,10 @@ gbigquery_dataset { 'id-of-resource':
   An email address of a user to grant access to. For example: fred@example.com
 
 ##### access[]/view
-  A view from a different dataset to grant access to. Queries executed against
-  that view will have read access to tables in this dataset. The role field is
-  not required when this field is set. If that view is updated by any user,
-  access to the view needs to be granted again via an update operation.
+  A view from a different dataset to grant access to. Queries executed against that view will have
+  read access to tables in this dataset. The role field is not required when this field is set. If
+  that view is updated by any user, access to the view needs to be granted again via an update
+  operation.
 
 ##### access[]/view/dataset_id
 Required.  The ID of the dataset containing this table.
@@ -183,17 +187,16 @@ Required.  The ID of the dataset containing this table.
 Required.  The ID of the project containing this table.
 
 ##### access[]/view/table_id
-Required.  The ID of the table. The ID must contain only letters (a-z, A-Z), numbers
-  (0-9), or underscores (_). The maximum length is 1,024 characters.
+Required.  The ID of the table. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores
+  (_). The maximum length is 1,024 characters.
 
 ##### `dataset_reference`
 
 Required.  A reference that identifies the dataset.
 
 ##### dataset_reference/dataset_id
-Required.  A unique ID for this dataset, without the project name. The ID must contain
-  only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum
-  length is 1,024 characters.
+Required.  A unique ID for this dataset, without the project name. The ID must contain only letters (a-z,
+  A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters.
 
 ##### dataset_reference/project_id
   The ID of the project containing this dataset.
@@ -212,13 +215,12 @@ Required.  A unique ID for this dataset, without the project name. The ID must c
 
 ##### `labels`
 
-  The labels associated with this dataset. You can use these to organize and
-  group your datasets
+  The labels associated with this dataset. You can use these to organize and group your datasets
 
 ##### `location`
 
-  The geographic location where the dataset should reside. Possible values
-  include EU and US. The default value is US.
+  The geographic location where the dataset should reside. Possible values include EU and US. The
+  default value is US.
 
 
 ##### Output-only properties
@@ -227,13 +229,12 @@ Required.  A unique ID for this dataset, without the project name. The ID must c
   The time when this dataset was created, in milliseconds since the epoch.
 
 * `id`: Output only.
-  The fully-qualified unique name of the dataset in the format
-  projectId:datasetId. The dataset name without the project name is given in
-  the datasetId field
+  The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset
+  name without the project name is given in the datasetId field
 
 * `last_modified_time`: Output only.
-  The date when this dataset or any of its tables was last modified, in
-  milliseconds since the epoch.
+  The date when this dataset or any of its tables was last modified, in milliseconds since the
+  epoch.
 
 
 ## Limitations

@@ -61,25 +61,23 @@ Puppet::Type.newtype(:gbigquery_dataset) do
     desc 'The name of the Dataset.'
   end
 
-  newproperty(:access,
-              parent: Google::Bigquery::Property::DatasetAccessArray) do
+  newproperty(:name, parent: Google::Bigquery::Property::String) do
+    desc 'Dataset name'
+  end
+
+  newproperty(:access, parent: Google::Bigquery::Property::DatasetAccessArray) do
     desc 'Access controls on the bucket.'
   end
 
   newproperty(:creation_time, parent: Google::Bigquery::Property::Integer) do
-    desc <<-DOC
-      The time when this dataset was created, in milliseconds since the epoch.
-      (output only)
-    DOC
+    desc 'The time when this dataset was created, in milliseconds since the epoch. (output only)'
   end
 
-  newproperty(:dataset_reference,
-              parent: Google::Bigquery::Property::DatasetDatasetReferen) do
+  newproperty(:dataset_reference, parent: Google::Bigquery::Property::DatasetDatasetReferen) do
     desc 'A reference that identifies the dataset.'
   end
 
-  newproperty(:default_table_expiration_ms,
-              parent: Google::Bigquery::Property::Integer) do
+  newproperty(:default_table_expiration_ms, parent: Google::Bigquery::Property::Integer) do
     desc 'The default lifetime of all tables in the dataset, in milliseconds'
   end
 
@@ -93,31 +91,29 @@ Puppet::Type.newtype(:gbigquery_dataset) do
 
   newproperty(:id, parent: Google::Bigquery::Property::String) do
     desc <<-DOC
-      The fully-qualified unique name of the dataset in the format
-      projectId:datasetId. The dataset name without the project name is given
-      in the datasetId field (output only)
+      The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset
+      name without the project name is given in the datasetId field (output only)
     DOC
   end
 
   newproperty(:labels, parent: Google::Bigquery::Property::NameValues) do
     desc <<-DOC
-      The labels associated with this dataset. You can use these to organize
-      and group your datasets
+      The labels associated with this dataset. You can use these to organize and group your
+      datasets
     DOC
   end
 
-  newproperty(:last_modified_time,
-              parent: Google::Bigquery::Property::Integer) do
+  newproperty(:last_modified_time, parent: Google::Bigquery::Property::Integer) do
     desc <<-DOC
-      The date when this dataset or any of its tables was last modified, in
-      milliseconds since the epoch. (output only)
+      The date when this dataset or any of its tables was last modified, in milliseconds since the
+      epoch. (output only)
     DOC
   end
 
   newproperty(:location, parent: Google::Bigquery::Property::String) do
     desc <<-DOC
-      The geographic location where the dataset should reside. Possible values
-      include EU and US. The default value is US.
+      The geographic location where the dataset should reside. Possible values include EU and US.
+      The default value is US.
     DOC
     defaultto 'US'
   end

@@ -87,10 +87,12 @@ puppet-codegen:
   * .rubocop.yml
   * .tools/end2end/data/dataset.pp
   * .tools/end2end/data/delete_dataset.pp
+  * .tools/end2end/data/table.pp
   * CHANGELOG.md
   * CONTRIBUTING.md
   * examples/dataset.pp
   * examples/delete_dataset.pp
+  * examples/table.pp
   * Gemfile
   * lib/google/bigquery/network/base.rb
   * lib/google/bigquery/network/delete.rb

@@ -35,7 +35,7 @@
 #
 #   FACTER_cred_path=/path/to/my/cred.json \
 #   FACTER_project='my-test-project'
-#       puppet apply .tools/end2end/data/dataset.pp
+#       puppet apply .tools/end2end/data/table.pp
 #
 # For convenience you optionally can add it to your ~/.bash_profile (or the
 # respective .profile settings) environment:
@@ -68,4 +68,11 @@ gbigquery_dataset { 'puppet-e2e-example_dataset':
   },
   project           => $project, # e.g. 'my-test-project'
   credential        => 'mycred',
+}
+
+gbigquery_table { 'puppet-e2e-example_table':
+  ensure     => present,
+  dataset    => 'puppet-e2e-example_dataset',
+  project    => $project, # e.g. 'my-test-project'
+  credential => 'mycred',
 }

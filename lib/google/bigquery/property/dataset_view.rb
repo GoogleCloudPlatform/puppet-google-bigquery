@@ -88,12 +88,9 @@ module Google
       # Data is coming from the GCP API
       class DatasetViewApi < DatasetView
         def initialize(args)
-          @dataset_id =
-            Google::Bigquery::Property::String.api_munge(args['datasetId'])
-          @project_id =
-            Google::Bigquery::Property::String.api_munge(args['projectId'])
-          @table_id =
-            Google::Bigquery::Property::String.api_munge(args['tableId'])
+          @dataset_id = Google::Bigquery::Property::String.api_munge(args['datasetId'])
+          @project_id = Google::Bigquery::Property::String.api_munge(args['projectId'])
+          @table_id = Google::Bigquery::Property::String.api_munge(args['tableId'])
         end
       end
 
@@ -101,12 +98,9 @@ module Google
       # Data is coming from the Puppet manifest
       class DatasetViewCatalog < DatasetView
         def initialize(args)
-          @dataset_id =
-            Google::Bigquery::Property::String.unsafe_munge(args['dataset_id'])
-          @project_id =
-            Google::Bigquery::Property::String.unsafe_munge(args['project_id'])
-          @table_id =
-            Google::Bigquery::Property::String.unsafe_munge(args['table_id'])
+          @dataset_id = Google::Bigquery::Property::String.unsafe_munge(args['dataset_id'])
+          @project_id = Google::Bigquery::Property::String.unsafe_munge(args['project_id'])
+          @table_id = Google::Bigquery::Property::String.unsafe_munge(args['table_id'])
         end
       end
     end

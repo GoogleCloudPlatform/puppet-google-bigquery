@@ -68,28 +68,18 @@ Puppet::Type.type(:gbigquery_dataset).provide(:google) do
 
   def self.fetch_to_hash(fetch)
     {
-      access: Google::Bigquery::Property::DatasetAccessArray.api_munge(
-        fetch['access']
-      ),
-      creation_time:
-        Google::Bigquery::Property::Integer.api_munge(fetch['creationTime']),
+      name: Google::Bigquery::Property::String.api_munge(fetch['name']),
+      access: Google::Bigquery::Property::DatasetAccessArray.api_munge(fetch['access']),
+      creation_time: Google::Bigquery::Property::Integer.api_munge(fetch['creationTime']),
       dataset_reference:
-        Google::Bigquery::Property::DatasetDatasetReferen.api_munge(
-          fetch['datasetReference']
-        ),
+        Google::Bigquery::Property::DatasetDatasetReferen.api_munge(fetch['datasetReference']),
       default_table_expiration_ms:
-        Google::Bigquery::Property::Integer.api_munge(
-          fetch['defaultTableExpirationMs']
-        ),
-      description:
-        Google::Bigquery::Property::String.api_munge(fetch['description']),
-      friendly_name:
-        Google::Bigquery::Property::String.api_munge(fetch['friendlyName']),
+        Google::Bigquery::Property::Integer.api_munge(fetch['defaultTableExpirationMs']),
+      description: Google::Bigquery::Property::String.api_munge(fetch['description']),
+      friendly_name: Google::Bigquery::Property::String.api_munge(fetch['friendlyName']),
       id: Google::Bigquery::Property::String.api_munge(fetch['id']),
       labels: Google::Bigquery::Property::NameValues.api_munge(fetch['labels']),
-      last_modified_time: Google::Bigquery::Property::Integer.api_munge(
-        fetch['lastModifiedTime']
-      ),
+      last_modified_time: Google::Bigquery::Property::Integer.api_munge(fetch['lastModifiedTime']),
       location: Google::Bigquery::Property::String.api_munge(fetch['location'])
     }.reject { |_, v| v.nil? }
   end
@@ -161,6 +151,7 @@ Puppet::Type.type(:gbigquery_dataset).provide(:google) do
   def resource_to_request
     request = {
       kind: 'bigquery#dataset',
+      name: @resource[:name],
       access: @resource[:access],
       datasetReference: @resource[:dataset_reference],
       defaultTableExpirationMs: @resource[:default_table_expiration_ms],
