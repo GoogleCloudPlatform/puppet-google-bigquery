@@ -62,10 +62,10 @@ gauth_credential { 'mycred':
 }
 
 gbigquery_dataset { 'example_dataset':
-  ensure     => present,
+  ensure            => present,
   dataset_reference => {
     dataset_id => 'example_dataset'
   },
-  project    => $project, # e.g. 'my-test-project'
-  credential => 'mycred',
+  project           => $project, # e.g. 'my-test-project'
+  credential        => 'mycred',
 }

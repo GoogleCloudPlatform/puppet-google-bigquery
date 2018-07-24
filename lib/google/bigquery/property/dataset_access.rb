@@ -102,15 +102,11 @@ module Google
       class DatasetAccessApi < DatasetAccess
         def initialize(args)
           @domain = Google::Bigquery::Property::String.api_munge(args['domain'])
-          @group_by_email =
-            Google::Bigquery::Property::String.api_munge(args['groupByEmail'])
+          @group_by_email = Google::Bigquery::Property::String.api_munge(args['groupByEmail'])
           @role = Google::Bigquery::Property::Enum.api_munge(args['role'])
-          @special_group =
-            Google::Bigquery::Property::String.api_munge(args['specialGroup'])
-          @user_by_email =
-            Google::Bigquery::Property::String.api_munge(args['userByEmail'])
-          @view =
-            Google::Bigquery::Property::DatasetView.api_munge(args['view'])
+          @special_group = Google::Bigquery::Property::String.api_munge(args['specialGroup'])
+          @user_by_email = Google::Bigquery::Property::String.api_munge(args['userByEmail'])
+          @view = Google::Bigquery::Property::DatasetView.api_munge(args['view'])
         end
       end
 
@@ -118,20 +114,12 @@ module Google
       # Data is coming from the Puppet manifest
       class DatasetAccessCatalog < DatasetAccess
         def initialize(args)
-          @domain =
-            Google::Bigquery::Property::String.unsafe_munge(args['domain'])
-          @group_by_email = Google::Bigquery::Property::String.unsafe_munge(
-            args['group_by_email']
-          )
+          @domain = Google::Bigquery::Property::String.unsafe_munge(args['domain'])
+          @group_by_email = Google::Bigquery::Property::String.unsafe_munge(args['group_by_email'])
           @role = Google::Bigquery::Property::Enum.unsafe_munge(args['role'])
-          @special_group = Google::Bigquery::Property::String.unsafe_munge(
-            args['special_group']
-          )
-          @user_by_email = Google::Bigquery::Property::String.unsafe_munge(
-            args['user_by_email']
-          )
-          @view =
-            Google::Bigquery::Property::DatasetView.unsafe_munge(args['view'])
+          @special_group = Google::Bigquery::Property::String.unsafe_munge(args['special_group'])
+          @user_by_email = Google::Bigquery::Property::String.unsafe_munge(args['user_by_email'])
+          @view = Google::Bigquery::Property::DatasetView.unsafe_munge(args['view'])
         end
       end
     end

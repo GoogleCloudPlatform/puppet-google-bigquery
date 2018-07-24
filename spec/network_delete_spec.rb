@@ -38,9 +38,7 @@ describe Google::Bigquery::Network::Delete do
   let(:uri) { Google::Bigquery::NetworkBlocker::ALLOWED_TEST_URI }
 
   context 'verify proper request' do
-    before(:each) do
-      Google::Bigquery::NetworkBlocker.instance.allow_delete(uri)
-    end
+    before(:each) { Google::Bigquery::NetworkBlocker.instance.allow_delete(uri) }
 
     subject { described_class.new(uri, credential).send }
 

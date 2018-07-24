@@ -35,7 +35,7 @@
 #
 #   FACTER_cred_path=/path/to/my/cred.json \
 #   FACTER_project='my-test-project'
-#       puppet apply .tools/end2end/data/dataset.pp
+#       puppet apply examples/table.pp
 #
 # For convenience you optionally can add it to your ~/.bash_profile (or the
 # respective .profile settings) environment:
@@ -61,11 +61,18 @@ gauth_credential { 'mycred':
   ],
 }
 
-gbigquery_dataset { 'puppet-e2e-example_dataset':
+gbigquery_dataset { 'example_dataset':
   ensure            => present,
   dataset_reference => {
     dataset_id => 'example_dataset'
   },
   project           => $project, # e.g. 'my-test-project'
   credential        => 'mycred',
+}
+
+gbigquery_table { 'example_table':
+  ensure     => present,
+  dataset    => 'example_dataset',
+  project    => $project, # e.g. 'my-test-project'
+  credential => 'mycred',
 }

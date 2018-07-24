@@ -250,42 +250,25 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                 catalog.resource('Gbigquery_dataset[title0]').provider
               end
 
+              it { is_expected.to have_attributes(name: 'title0') }
               # TODO(nelsonjr): Implement complex array object test.
               # it 'access' do
               #   # Add test code here
               # end
-              it do
-                is_expected.to have_attributes(creation_time: 2_809_822_103)
-              end
+              it { is_expected.to have_attributes(creation_time: 2_809_822_103) }
               # TODO(nelsonjr): Implement complex nested property object test.
               # it 'datasetReference' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(
-                    default_table_expiration_ms: 1_786_720_217
-                  )
-              end
-              it do
-                is_expected
-                  .to have_attributes(description: 'test description#0 data')
-              end
-              it do
-                is_expected
-                  .to have_attributes(
-                    friendly_name: 'test friendly_name#0 data'
-                  )
-              end
+              it { is_expected.to have_attributes(default_table_expiration_ms: 1_786_720_217) }
+              it { is_expected.to have_attributes(description: 'test description#0 data') }
+              it { is_expected.to have_attributes(friendly_name: 'test friendly_name#0 data') }
               it { is_expected.to have_attributes(id: 'test id#0 data') }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(last_modified_time: 2_728_042_666)
-              end
+              it { is_expected.to have_attributes(last_modified_time: 2_728_042_666) }
               it { is_expected.to have_attributes(location: 'US') }
             end
 
@@ -294,42 +277,25 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                 catalog.resource('Gbigquery_dataset[title1]').provider
               end
 
+              it { is_expected.to have_attributes(name: 'title1') }
               # TODO(nelsonjr): Implement complex array object test.
               # it 'access' do
               #   # Add test code here
               # end
-              it do
-                is_expected.to have_attributes(creation_time: 5_619_644_207)
-              end
+              it { is_expected.to have_attributes(creation_time: 5_619_644_207) }
               # TODO(nelsonjr): Implement complex nested property object test.
               # it 'datasetReference' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(
-                    default_table_expiration_ms: 3_573_440_435
-                  )
-              end
-              it do
-                is_expected
-                  .to have_attributes(description: 'test description#1 data')
-              end
-              it do
-                is_expected
-                  .to have_attributes(
-                    friendly_name: 'test friendly_name#1 data'
-                  )
-              end
+              it { is_expected.to have_attributes(default_table_expiration_ms: 3_573_440_435) }
+              it { is_expected.to have_attributes(description: 'test description#1 data') }
+              it { is_expected.to have_attributes(friendly_name: 'test friendly_name#1 data') }
               it { is_expected.to have_attributes(id: 'test id#1 data') }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(last_modified_time: 5_456_085_333)
-              end
+              it { is_expected.to have_attributes(last_modified_time: 5_456_085_333) }
               it { is_expected.to have_attributes(location: 'US') }
             end
 
@@ -338,42 +304,25 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                 catalog.resource('Gbigquery_dataset[title2]').provider
               end
 
+              it { is_expected.to have_attributes(name: 'title2') }
               # TODO(nelsonjr): Implement complex array object test.
               # it 'access' do
               #   # Add test code here
               # end
-              it do
-                is_expected.to have_attributes(creation_time: 8_429_466_311)
-              end
+              it { is_expected.to have_attributes(creation_time: 8_429_466_311) }
               # TODO(nelsonjr): Implement complex nested property object test.
               # it 'datasetReference' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(
-                    default_table_expiration_ms: 5_360_160_653
-                  )
-              end
-              it do
-                is_expected
-                  .to have_attributes(description: 'test description#2 data')
-              end
-              it do
-                is_expected
-                  .to have_attributes(
-                    friendly_name: 'test friendly_name#2 data'
-                  )
-              end
+              it { is_expected.to have_attributes(default_table_expiration_ms: 5_360_160_653) }
+              it { is_expected.to have_attributes(description: 'test description#2 data') }
+              it { is_expected.to have_attributes(friendly_name: 'test friendly_name#2 data') }
               it { is_expected.to have_attributes(id: 'test id#2 data') }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(last_modified_time: 8_184_128_000)
-              end
+              it { is_expected.to have_attributes(last_modified_time: 8_184_128_000) }
               it { is_expected.to have_attributes(location: 'US') }
             end
           end
@@ -454,6 +403,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                     'test labels#2 data' => 6131251034,
                   },
                   location                    => 'US',
+                  name                        => 'test name#0 data',
                   project                     => 'test project#0 data',
                   credential                  => 'cred0',
                 }
@@ -535,6 +485,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                     'test labels#4 data' => 'test labels#4 data',
                   },
                   location                    => 'US',
+                  name                        => 'test name#1 data',
                   project                     => 'test project#1 data',
                   credential                  => 'cred1',
                 }
@@ -581,6 +532,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                     'test labels#6 data' => 14306252413,
                   },
                   location                    => 'US',
+                  name                        => 'test name#2 data',
                   project                     => 'test project#2 data',
                   credential                  => 'cred2',
                 }
@@ -593,42 +545,25 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                 catalog.resource('Gbigquery_dataset[title0]').provider
               end
 
+              it { is_expected.to have_attributes(name: 'test name#0 data') }
               # TODO(nelsonjr): Implement complex array object test.
               # it 'access' do
               #   # Add test code here
               # end
-              it do
-                is_expected.to have_attributes(creation_time: 2_809_822_103)
-              end
+              it { is_expected.to have_attributes(creation_time: 2_809_822_103) }
               # TODO(nelsonjr): Implement complex nested property object test.
               # it 'datasetReference' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(
-                    default_table_expiration_ms: 1_786_720_217
-                  )
-              end
-              it do
-                is_expected
-                  .to have_attributes(description: 'test description#0 data')
-              end
-              it do
-                is_expected
-                  .to have_attributes(
-                    friendly_name: 'test friendly_name#0 data'
-                  )
-              end
+              it { is_expected.to have_attributes(default_table_expiration_ms: 1_786_720_217) }
+              it { is_expected.to have_attributes(description: 'test description#0 data') }
+              it { is_expected.to have_attributes(friendly_name: 'test friendly_name#0 data') }
               it { is_expected.to have_attributes(id: 'test id#0 data') }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(last_modified_time: 2_728_042_666)
-              end
+              it { is_expected.to have_attributes(last_modified_time: 2_728_042_666) }
               it { is_expected.to have_attributes(location: 'US') }
             end
 
@@ -637,42 +572,25 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                 catalog.resource('Gbigquery_dataset[title1]').provider
               end
 
+              it { is_expected.to have_attributes(name: 'test name#1 data') }
               # TODO(nelsonjr): Implement complex array object test.
               # it 'access' do
               #   # Add test code here
               # end
-              it do
-                is_expected.to have_attributes(creation_time: 5_619_644_207)
-              end
+              it { is_expected.to have_attributes(creation_time: 5_619_644_207) }
               # TODO(nelsonjr): Implement complex nested property object test.
               # it 'datasetReference' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(
-                    default_table_expiration_ms: 3_573_440_435
-                  )
-              end
-              it do
-                is_expected
-                  .to have_attributes(description: 'test description#1 data')
-              end
-              it do
-                is_expected
-                  .to have_attributes(
-                    friendly_name: 'test friendly_name#1 data'
-                  )
-              end
+              it { is_expected.to have_attributes(default_table_expiration_ms: 3_573_440_435) }
+              it { is_expected.to have_attributes(description: 'test description#1 data') }
+              it { is_expected.to have_attributes(friendly_name: 'test friendly_name#1 data') }
               it { is_expected.to have_attributes(id: 'test id#1 data') }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(last_modified_time: 5_456_085_333)
-              end
+              it { is_expected.to have_attributes(last_modified_time: 5_456_085_333) }
               it { is_expected.to have_attributes(location: 'US') }
             end
 
@@ -681,42 +599,25 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                 catalog.resource('Gbigquery_dataset[title2]').provider
               end
 
+              it { is_expected.to have_attributes(name: 'test name#2 data') }
               # TODO(nelsonjr): Implement complex array object test.
               # it 'access' do
               #   # Add test code here
               # end
-              it do
-                is_expected.to have_attributes(creation_time: 8_429_466_311)
-              end
+              it { is_expected.to have_attributes(creation_time: 8_429_466_311) }
               # TODO(nelsonjr): Implement complex nested property object test.
               # it 'datasetReference' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(
-                    default_table_expiration_ms: 5_360_160_653
-                  )
-              end
-              it do
-                is_expected
-                  .to have_attributes(description: 'test description#2 data')
-              end
-              it do
-                is_expected
-                  .to have_attributes(
-                    friendly_name: 'test friendly_name#2 data'
-                  )
-              end
+              it { is_expected.to have_attributes(default_table_expiration_ms: 5_360_160_653) }
+              it { is_expected.to have_attributes(description: 'test description#2 data') }
+              it { is_expected.to have_attributes(friendly_name: 'test friendly_name#2 data') }
               it { is_expected.to have_attributes(id: 'test id#2 data') }
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
               #   # Add test code here
               # end
-              it do
-                is_expected
-                  .to have_attributes(last_modified_time: 8_184_128_000)
-              end
+              it { is_expected.to have_attributes(last_modified_time: 8_184_128_000) }
               it { is_expected.to have_attributes(location: 'US') }
             end
           end
@@ -773,57 +674,61 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
             expect_network_get_failed 1, name: 'title0'
             expect_network_create \
               1,
-              'kind' => 'bigquery#dataset',
-              'access' => [
-                {
-                  'domain' => 'test domain#0 data',
-                  'groupByEmail' => 'test group_by_email#0 data',
-                  'role' => 'READER',
-                  'specialGroup' => 'test special_group#0 data',
-                  'userByEmail' => 'test user_by_email#0 data',
-                  'view' => {
-                    'datasetId' => 'test dataset_id#0 data',
-                    'projectId' => 'test project_id#0 data',
-                    'tableId' => 'test table_id#0 data'
+              {
+                'kind' => 'bigquery#dataset',
+                'name' => 'title0',
+                'access' => [
+                  {
+                    'domain' => 'test domain#0 data',
+                    'groupByEmail' => 'test group_by_email#0 data',
+                    'role' => 'READER',
+                    'specialGroup' => 'test special_group#0 data',
+                    'userByEmail' => 'test user_by_email#0 data',
+                    'view' => {
+                      'datasetId' => 'test dataset_id#0 data',
+                      'projectId' => 'test project_id#0 data',
+                      'tableId' => 'test table_id#0 data'
+                    }
+                  },
+                  {
+                    'domain' => 'test domain#1 data',
+                    'groupByEmail' => 'test group_by_email#1 data',
+                    'role' => 'WRITER',
+                    'specialGroup' => 'test special_group#1 data',
+                    'userByEmail' => 'test user_by_email#1 data',
+                    'view' => {
+                      'datasetId' => 'test dataset_id#1 data',
+                      'projectId' => 'test project_id#1 data',
+                      'tableId' => 'test table_id#1 data'
+                    }
+                  },
+                  {
+                    'domain' => 'test domain#2 data',
+                    'groupByEmail' => 'test group_by_email#2 data',
+                    'role' => 'OWNER',
+                    'specialGroup' => 'test special_group#2 data',
+                    'userByEmail' => 'test user_by_email#2 data',
+                    'view' => {
+                      'datasetId' => 'test dataset_id#2 data',
+                      'projectId' => 'test project_id#2 data',
+                      'tableId' => 'test table_id#2 data'
+                    }
                   }
+                ],
+                'datasetReference' => {
+                  'datasetId' => 'test dataset_id#0 data',
+                  'projectId' => 'test project_id#0 data'
                 },
-                {
-                  'domain' => 'test domain#1 data',
-                  'groupByEmail' => 'test group_by_email#1 data',
-                  'role' => 'WRITER',
-                  'specialGroup' => 'test special_group#1 data',
-                  'userByEmail' => 'test user_by_email#1 data',
-                  'view' => {
-                    'datasetId' => 'test dataset_id#1 data',
-                    'projectId' => 'test project_id#1 data',
-                    'tableId' => 'test table_id#1 data'
-                  }
+                'defaultTableExpirationMs' => 1_786_720_217,
+                'description' => 'test description#0 data',
+                'friendlyName' => 'test friendly_name#0 data',
+                'labels' => {
+                  'test labels#1 data' => 'test labels#1 data',
+                  'test labels#2 data' => 6_131_251_034
                 },
-                {
-                  'domain' => 'test domain#2 data',
-                  'groupByEmail' => 'test group_by_email#2 data',
-                  'role' => 'OWNER',
-                  'specialGroup' => 'test special_group#2 data',
-                  'userByEmail' => 'test user_by_email#2 data',
-                  'view' => {
-                    'datasetId' => 'test dataset_id#2 data',
-                    'projectId' => 'test project_id#2 data',
-                    'tableId' => 'test table_id#2 data'
-                  }
-                }
-              ],
-              'datasetReference' => {
-                'datasetId' => 'test dataset_id#0 data',
-                'projectId' => 'test project_id#0 data'
+                'location' => 'US'
               },
-              'defaultTableExpirationMs' => 1_786_720_217,
-              'description' => 'test description#0 data',
-              'friendlyName' => 'test friendly_name#0 data',
-              'labels' => {
-                'test labels#1 data' => 'test labels#1 data',
-                'test labels#2 data' => 6_131_251_034
-              },
-              'location' => 'US'
+              name: 'title0'
           end
 
           subject do
@@ -908,6 +813,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
             expect_network_create \
               1,
               'kind' => 'bigquery#dataset',
+              'name' => 'test name#0 data',
               'access' => [
                 {
                   'domain' => 'test domain#0 data',
@@ -1015,6 +921,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                   'test labels#2 data' => 6131251034,
                 },
                 location                    => 'US',
+                name                        => 'test name#0 data',
                 project                     => 'test project#0 data',
                 credential                  => 'cred0',
               }
@@ -1090,6 +997,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                   dataset_id => 'test dataset_id#0 data',
                   project_id => 'test project_id#0 data',
                 },
+                name              => 'test name#0 data',
                 project           => 'test project#0 data',
                 credential        => 'cred0',
               }
@@ -1166,6 +1074,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
                   dataset_id => 'test dataset_id#0 data',
                   project_id => 'test project_id#0 data',
                 },
+                name              => 'test name#0 data',
                 project           => 'test project#0 data',
                 credential        => 'cred0',
               }
