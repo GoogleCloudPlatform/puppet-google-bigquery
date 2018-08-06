@@ -73,7 +73,7 @@ Puppet::Type.newtype(:gbigquery_dataset) do
     desc 'The time when this dataset was created, in milliseconds since the epoch. (output only)'
   end
 
-  newproperty(:dataset_reference, parent: Google::Bigquery::Property::DatasetDatasetReferen) do
+  newproperty(:dataset_reference, parent: Google::Bigquery::Property::DatasetDatasetReference) do
     desc 'A reference that identifies the dataset.'
   end
 
