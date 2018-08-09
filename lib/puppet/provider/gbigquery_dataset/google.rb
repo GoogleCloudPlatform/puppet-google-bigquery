@@ -72,7 +72,7 @@ Puppet::Type.type(:gbigquery_dataset).provide(:google) do
       access: Google::Bigquery::Property::DatasetAccessArray.api_munge(fetch['access']),
       creation_time: Google::Bigquery::Property::Integer.api_munge(fetch['creationTime']),
       dataset_reference:
-        Google::Bigquery::Property::DatasetDatasetReferen.api_munge(fetch['datasetReference']),
+        Google::Bigquery::Property::DatasetDatasetReference.api_munge(fetch['datasetReference']),
       default_table_expiration_ms:
         Google::Bigquery::Property::Integer.api_munge(fetch['defaultTableExpirationMs']),
       description: Google::Bigquery::Property::String.api_munge(fetch['description']),
