@@ -25,51 +25,40 @@
 #
 # ----------------------------------------------------------------------------
 
-module GoogleTests
-  module Constants
-    # Constants for: Dataset.project
-    D_PROJECT_DATA = [
-      'test project#0 data',
-      'test project#1 data',
-      'test project#2 data',
-      'test project#3 data',
-      'test project#4 data'
-    ].freeze
+require 'google/bigquery/property/base'
 
-    # Constants for: Dataset.name
-    D_NAME_DATA = [
-      'test name#0 data',
-      'test name#1 data',
-      'test name#2 data',
-      'test name#3 data',
-      'test name#4 data'
-    ].freeze
+module Google
+  module Bigquery
+    module Property
+      # A Puppet property that holds a string
+      class Boolean < Google::Bigquery::Property::Base
+        def self.unsafe_munge(value)
+          return if value.nil?
+          value
+        end
 
-    # Constants for: Table.project
-    T_PROJECT_DATA = [
-      'test project#0 data',
-      'test project#1 data',
-      'test project#2 data',
-      'test project#3 data',
-      'test project#4 data'
-    ].freeze
+        def unsafe_munge(value)
+          self.class.unsafe_munge(value)
+        end
 
-    # Constants for: Table.dataset
-    T_DATASET_DATA = [
-      'test dataset#0 data',
-      'test dataset#1 data',
-      'test dataset#2 data',
-      'test dataset#3 data',
-      'test dataset#4 data'
-    ].freeze
+        def self.api_munge(value)
+          return if value.nil?
+          value
+        end
 
-    # Constants for: Table.name
-    T_NAME_DATA = [
-      'test name#0 data',
-      'test name#1 data',
-      'test name#2 data',
-      'test name#3 data',
-      'test name#4 data'
-    ].freeze
+        def insync?(is)
+          test_is = Puppet::Coercion.boolean(is)
+          test_should = Puppet::Coercion.boolean(should)
+          debug("insync? #{name}: '#{test_is}' == '#{test_should}'")
+          insync = false
+          insync = true if test_is == :absent && test_should == :absent
+          insync = (test_is == test_should) \
+            unless test_is == :absent || test_should == :absent
+          debug("insync? #{name}: '#{test_is}' == '#{test_should}': #{insync}")
+          resource.provider.dirty name, is, should unless insync
+          insync
+        end
+      end
+    end
   end
 end

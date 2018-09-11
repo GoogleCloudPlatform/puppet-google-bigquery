@@ -71,8 +71,13 @@ gbigquery_dataset { 'example_dataset':
 }
 
 gbigquery_table { 'example_table':
-  ensure     => present,
-  dataset    => 'example_dataset',
-  project    => $project, # e.g. 'my-test-project'
-  credential => 'mycred',
+  ensure          => present,
+  dataset         => 'example_dataset',
+  table_reference => {
+    dataset_id => 'example_dataset',
+    project_id => $project,
+    table_id   => 'example_table'
+  },
+  project         => $project, # e.g. 'my-test-project'
+  credential      => 'mycred',
 }

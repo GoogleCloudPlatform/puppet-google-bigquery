@@ -101,6 +101,7 @@ puppet-codegen:
   * lib/google/bigquery/network/put.rb
   * lib/google/bigquery/property/array.rb
   * lib/google/bigquery/property/base.rb
+  * lib/google/bigquery/property/boolean.rb
   * lib/google/bigquery/property/dataset_access.rb
   * lib/google/bigquery/property/dataset_dataset_reference.rb
   * lib/google/bigquery/property/dataset_view.rb
@@ -108,8 +109,25 @@ puppet-codegen:
   * lib/google/bigquery/property/integer.rb
   * lib/google/bigquery/property/namevalues.rb
   * lib/google/bigquery/property/string.rb
+  * lib/google/bigquery/property/string_array.rb
+  * lib/google/bigquery/property/table_bigtable_options.rb
+  * lib/google/bigquery/property/table_column_families.rb
+  * lib/google/bigquery/property/table_columns.rb
+  * lib/google/bigquery/property/table_csv_options.rb
+  * lib/google/bigquery/property/table_encryption_configuration.rb
+  * lib/google/bigquery/property/table_external_data_configuration.rb
+  * lib/google/bigquery/property/table_fields.rb
+  * lib/google/bigquery/property/table_google_sheets_options.rb
+  * lib/google/bigquery/property/table_schema.rb
+  * lib/google/bigquery/property/table_streaming_buffer.rb
+  * lib/google/bigquery/property/table_table_reference.rb
+  * lib/google/bigquery/property/table_time_partitioning.rb
+  * lib/google/bigquery/property/table_user_defined_function_resources.rb
+  * lib/google/bigquery/property/table_view.rb
   * lib/puppet/provider/gbigquery_dataset/google.rb
+  * lib/puppet/provider/gbigquery_table/google.rb
   * lib/puppet/type/gbigquery_dataset.rb
+  * lib/puppet/type/gbigquery_table.rb
   * metadata.json
   * README.md
   * spec/.rubocop.yml
@@ -120,8 +138,15 @@ puppet-codegen:
   * spec/data/network/gbigquery_dataset/success2~title.yaml
   * spec/data/network/gbigquery_dataset/success3~name.yaml
   * spec/data/network/gbigquery_dataset/success3~title.yaml
+  * spec/data/network/gbigquery_table/success1~name.yaml
+  * spec/data/network/gbigquery_table/success1~title.yaml
+  * spec/data/network/gbigquery_table/success2~name.yaml
+  * spec/data/network/gbigquery_table/success2~title.yaml
+  * spec/data/network/gbigquery_table/success3~name.yaml
+  * spec/data/network/gbigquery_table/success3~title.yaml
   * spec/fake_auth.rb
   * spec/gbigquery_dataset_provider_spec.rb
+  * spec/gbigquery_table_provider_spec.rb
   * spec/network_blocker.rb
   * spec/network_blocker_spec.rb
   * spec/network_delete_spec.rb

@@ -71,8 +71,13 @@ gbigquery_dataset { 'puppet-e2e-example_dataset':
 }
 
 gbigquery_table { 'puppet-e2e-example_table':
-  ensure     => present,
-  dataset    => 'puppet-e2e-example_dataset',
-  project    => $project, # e.g. 'my-test-project'
-  credential => 'mycred',
+  ensure          => present,
+  dataset         => 'puppet-e2e-example_dataset',
+  table_reference => {
+    dataset_id => 'puppet-e2e-example_dataset',
+    project_id => $project,
+    table_id   => 'puppet-e2e-example_table'
+  },
+  project         => $project, # e.g. 'my-test-project'
+  credential      => 'mycred',
 }
