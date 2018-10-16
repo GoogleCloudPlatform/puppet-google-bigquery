@@ -34,7 +34,7 @@ require 'google/bigquery/property/dataset_dataset_reference'
 require 'google/bigquery/property/dataset_view'
 require 'google/bigquery/property/enum'
 require 'google/bigquery/property/integer'
-require 'google/bigquery/property/namevalues'
+require 'google/bigquery/property/keyvaluepairs'
 require 'google/bigquery/property/string'
 require 'google/hash_utils'
 require 'puppet'
@@ -78,7 +78,7 @@ Puppet::Type.type(:gbigquery_dataset).provide(:google) do
       description: Google::Bigquery::Property::String.api_munge(fetch['description']),
       friendly_name: Google::Bigquery::Property::String.api_munge(fetch['friendlyName']),
       id: Google::Bigquery::Property::String.api_munge(fetch['id']),
-      labels: Google::Bigquery::Property::NameValues.api_munge(fetch['labels']),
+      labels: Google::Bigquery::Property::KeyValuePairs.api_munge(fetch['labels']),
       last_modified_time: Google::Bigquery::Property::Integer.api_munge(fetch['lastModifiedTime']),
       location: Google::Bigquery::Property::String.api_munge(fetch['location'])
     }.reject { |_, v| v.nil? }

@@ -28,7 +28,7 @@
 require 'google/bigquery/property/boolean'
 require 'google/bigquery/property/enum'
 require 'google/bigquery/property/integer'
-require 'google/bigquery/property/namevalues'
+require 'google/bigquery/property/keyvaluepairs'
 require 'google/bigquery/property/string'
 require 'google/bigquery/property/string_array'
 require 'google/bigquery/property/table_bigtable_options'
@@ -98,7 +98,7 @@ Puppet::Type.newtype(:gbigquery_table) do
     desc 'An opaque ID uniquely identifying the table. (output only)'
   end
 
-  newproperty(:labels, parent: Google::Bigquery::Property::NameValues) do
+  newproperty(:labels, parent: Google::Bigquery::Property::KeyValuePairs) do
     desc <<-DOC
       The labels associated with this dataset. You can use these to organize and group your
       datasets

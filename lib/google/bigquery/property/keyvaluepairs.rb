@@ -31,7 +31,7 @@ module Google
   module Bigquery
     module Property
       # A Puppet property that holds a string
-      class NameValues < Google::Bigquery::Property::Base
+      class KeyValuePairs < Google::Bigquery::Property::Base
         def self.api_munge(value)
           return if value.nil?
           value

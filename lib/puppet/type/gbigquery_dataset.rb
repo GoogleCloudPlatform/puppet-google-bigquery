@@ -30,7 +30,7 @@ require 'google/bigquery/property/dataset_dataset_reference'
 require 'google/bigquery/property/dataset_view'
 require 'google/bigquery/property/enum'
 require 'google/bigquery/property/integer'
-require 'google/bigquery/property/namevalues'
+require 'google/bigquery/property/keyvaluepairs'
 require 'google/bigquery/property/string'
 require 'puppet'
 
@@ -96,7 +96,7 @@ Puppet::Type.newtype(:gbigquery_dataset) do
     DOC
   end
 
-  newproperty(:labels, parent: Google::Bigquery::Property::NameValues) do
+  newproperty(:labels, parent: Google::Bigquery::Property::KeyValuePairs) do
     desc <<-DOC
       The labels associated with this dataset. You can use these to organize and group your
       datasets

@@ -264,7 +264,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
               it { is_expected.to have_attributes(description: 'test description#0 data') }
               it { is_expected.to have_attributes(friendly_name: 'test friendly_name#0 data') }
               it { is_expected.to have_attributes(id: 'test id#0 data') }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -291,7 +291,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
               it { is_expected.to have_attributes(description: 'test description#1 data') }
               it { is_expected.to have_attributes(friendly_name: 'test friendly_name#1 data') }
               it { is_expected.to have_attributes(id: 'test id#1 data') }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -318,7 +318,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
               it { is_expected.to have_attributes(description: 'test description#2 data') }
               it { is_expected.to have_attributes(friendly_name: 'test friendly_name#2 data') }
               it { is_expected.to have_attributes(id: 'test id#2 data') }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -559,7 +559,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
               it { is_expected.to have_attributes(description: 'test description#0 data') }
               it { is_expected.to have_attributes(friendly_name: 'test friendly_name#0 data') }
               it { is_expected.to have_attributes(id: 'test id#0 data') }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -586,7 +586,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
               it { is_expected.to have_attributes(description: 'test description#1 data') }
               it { is_expected.to have_attributes(friendly_name: 'test friendly_name#1 data') }
               it { is_expected.to have_attributes(id: 'test id#1 data') }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -613,7 +613,7 @@ describe Puppet::Type.type(:gbigquery_dataset).provider(:google) do
               it { is_expected.to have_attributes(description: 'test description#2 data') }
               it { is_expected.to have_attributes(friendly_name: 'test friendly_name#2 data') }
               it { is_expected.to have_attributes(id: 'test id#2 data') }
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end

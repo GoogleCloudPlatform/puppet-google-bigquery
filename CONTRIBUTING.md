@@ -107,7 +107,7 @@ puppet-codegen:
   * lib/google/bigquery/property/dataset_view.rb
   * lib/google/bigquery/property/enum.rb
   * lib/google/bigquery/property/integer.rb
-  * lib/google/bigquery/property/namevalues.rb
+  * lib/google/bigquery/property/keyvaluepairs.rb
   * lib/google/bigquery/property/string.rb
   * lib/google/bigquery/property/string_array.rb
   * lib/google/bigquery/property/table_bigtable_options.rb
